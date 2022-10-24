@@ -1,0 +1,9 @@
+.CarsContainer {
+  width: 85vw;
+  color: #DDD;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
+  padding: 15px;
+}/*# sourceMappingURL=CarsGallery.module.css.map */

@@ -1,0 +1,8 @@
+.Wrapper {
+  width: calc(50% - 6px);
+}
+.Wrapper img {
+  position: relative;
+  max-height: 220px;
+  border-radius: 15px;
+}/*# sourceMappingURL=CarCard.module.css.map */
