@@ -2,7 +2,7 @@ import axios from "axios"
 
 const readCarsRequest = async(page?:number,marque?:string,modele?:string,prix?:number,annee?:number) => {
 
-    let url = `http://localhost:5000/api/v1`
+    let url = `https://car-dealer.adaptable.app/api/v1`
     if (page !== undefined) {
         url += `?page=${page}&`
     } 
