@@ -1,6 +1,6 @@
 import Style from "./CarsGallery.module.css" 
 import CarCard from "../CarCard/CarCard"
-import {cars} from '../../App'
+import {cars} from '../App/App'
 
 interface Props {
   cars: cars[],

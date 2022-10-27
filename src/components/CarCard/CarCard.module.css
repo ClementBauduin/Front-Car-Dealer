@@ -1,8 +1,18 @@
-.Wrapper {
-  width: calc(50% - 6px);
+@media (max-width: 768px) {
+  .Wrapper {
+    width: 100%;
+  }
+  .Wrapper p:last-child {
+    margin-bottom: 5px;
+  }
 }
-.Wrapper img {
-  position: relative;
-  max-height: 220px;
-  border-radius: 15px;
+@media (min-width: 768px) {
+  .Wrapper {
+    width: 40vw;
+  }
+  .Wrapper img {
+    position: relative;
+    max-height: 20vh;
+    border-radius: 15px;
+  }
 }/*# sourceMappingURL=CarCard.module.css.map */

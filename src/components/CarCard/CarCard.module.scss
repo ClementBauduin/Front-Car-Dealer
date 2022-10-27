@@ -1,12 +1,27 @@
-.Wrapper{
+@media (max-width: 768px) {
+    .Wrapper {
+        width: 100%;
 
-    width: calc(50% - 6px);
+        p:last-child {
+            margin-bottom: 5px;
+        }
+    }
 
-    img {
-        position: relative;
-        max-height: 220px;
-        border-radius: 15px;
-        
+
+}
+
+@media (min-width:768px) {
+    .Wrapper {
+
+        width: 40vw;
+
+        img {
+            position: relative;
+            max-height: 20vh;
+            border-radius: 15px;
+
+        }
+
     }
 
 }

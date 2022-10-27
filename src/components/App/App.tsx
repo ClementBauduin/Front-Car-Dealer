@@ -1,9 +1,10 @@
 import {useState} from 'react'
-import CarsGallery from "./components/CarsGallery/CarsGallery";
-import Sidebar from "./components/Sidebar/Sidebar";
-import './index.css';
+import CarsGallery from "../CarsGallery/CarsGallery";
+import Sidebar from "../Sidebar/Sidebar";
+import '../../index.css';
 import { useQuery } from '@tanstack/react-query';
-import readCarsRequest from './api/readCarsRequest';
+import readCarsRequest from '../../api/readCarsRequest';
+import Style from '../App/App.module.css';
 
 export interface cars {
   _id : string,
@@ -29,7 +30,7 @@ function App() {
   const {isLoading,data:cars} = useQuery<cars[]>(['cars',page,searchButton], () => readCarsRequest(page,input.marque,input.modele,input.prix,input.annee))  
   
   return (
-    <div style={{display:"flex"}}>
+    <div className={Style.AppContainer}>
       <Sidebar page={page} setPage={setPage} setInput={setInput} searchButton={searchButton} setSearchButton={setSearchButton}/>
       <CarsGallery cars={cars} isLoading={isLoading}/>
     </div>

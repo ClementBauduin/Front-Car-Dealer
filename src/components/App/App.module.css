@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .AppContainer {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .AppContainer {
+    display: flex;
+  }
+}/*# sourceMappingURL=App.module.css.map */

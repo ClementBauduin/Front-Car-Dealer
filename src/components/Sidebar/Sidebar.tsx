@@ -2,7 +2,8 @@ import Style from './Sidebar.module.css';
 import logo from '../../assets/carDealerLogo.png';
 import {Link} from 'react-router-dom'
 import {useForm} from "react-hook-form"
-import {Input} from "../../App"
+import {Input} from "../App/App"
+import {useState} from 'react'
 
 interface Props {
   page: number;
@@ -21,6 +22,8 @@ export default function Sidebar(props:Props) {
   const {setSearchButton} = props
   const {register,handleSubmit,reset,formState: {errors}} = useForm()
 
+  const [showFilters,setShowFilters] = useState<boolean>(true)
+  
   const onSubmit = (data:Input) => {
     setInput(data)
     setSearchButton(!searchButton)
@@ -37,12 +40,23 @@ export default function Sidebar(props:Props) {
     setPage(page + 1)
   }
 
+
+
   return (
     <div className={Style.SidebarContainer}>
-      <Link to='/'>
-        <img id={Style.logo} src={logo} alt="car dealer logo"></img>
-      </Link>
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <div className={Style.ImgWrapper}>
+        
+        <Link to='/'>
+          <img id={Style.logo} src={logo} alt="car dealer logo"></img>
+        </Link>
+        <div className={Style.HamburgerMenu} onClick={() => setShowFilters(!showFilters)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+        <form onSubmit={handleSubmit(onSubmit)} className={showFilters ? Style.formMobile : Style.form}>
             <div className={Style.FilterWrapper}>
                 <label>MARQUE</label>
                 <input type="text" {...register("marque",{setValueAs: marque => {
